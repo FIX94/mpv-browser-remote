@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MPV Remote Control</title>
+		<style> 
+			button {
+			  margin: 50px 80px;
+			  width: 800px;
+			  font-size: 100px;
+			  display: block;
+			}
+		</style>
+		<script>
+			function postUrl(url) {
+				var request = new XMLHttpRequest();
+				request.open('POST', url, true);
+				request.onload = function() { };
+				request.onerror = function() { };
+				request.send(null); //null cause url is data
+			}
+		</script>
+	</head>
+	<body>
+		<button onclick='postUrl("/play");'>Play/Pause</button>
+		<button onclick='postUrl("/quit");'>Quit</button>
+		<button onclick='postUrl("/fw10");'>Forward 10s</button>
+		<button onclick='postUrl("/bw10");'>Backward 10s</button>
+		<button onclick='postUrl("/fw60");'>Forward 60s</button>
+		<button onclick='postUrl("/bw60");'>Backward 60s</button>
+	</body>
+</html>
