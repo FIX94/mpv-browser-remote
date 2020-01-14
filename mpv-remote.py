@@ -27,6 +27,7 @@ class ourServer(http.server.BaseHTTPRequestHandler):
                 self.wfile.write(our_index_html)
         else: #only got a root file
             self.send_response(404)
+            self.end_headers()
 
     def do_GET(self):
         self.doGetResponse(True)
